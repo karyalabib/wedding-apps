@@ -1,0 +1,258 @@
+@import '../utils/variables';
+@import './Form.module.scss';
+
+.container {
+  position: fixed;
+  border: 1px solid #e4e6eb;
+  width: 100%;
+  bottom: 0;
+  max-width: 500px;
+  padding: calc(10px + 1vh) calc(8px + 0.8vw);
+  text-align: center;
+  background-color: $color_white;
+  border-radius: 15px 15px 0 0;
+  -webkit-box-shadow: 0px -5x 6px rgba(50, 50, 50, 0.25);
+  -moz-box-shadow: 0px -5px 6px rgba(50, 50, 50, 0.25);
+  box-shadow: 0px -5px 6px rgba(50, 50, 50, 0.25);
+
+
+  &[class$='close'] {
+    max-height: 0;
+    padding: 0;
+    border: 0;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+  }
+
+  &[class$='open'] {
+    z-index: 1;
+  }
+}
+
+.confirmation {
+  &[class*='show'] {
+    display: block
+  }
+
+  &[class*='hidden'] {
+    display: none;
+  }
+}
+
+.form {
+  position: relative;
+  display: block;
+  text-align: center;
+
+  &[class*='show'] {
+    display: block
+  }
+
+  &[class*='hidden'] {
+    display: none;
+  }
+}
+
+.formHeader {
+  margin-bottom: 25px;
+}
+
+.formContainer {
+  text-align: left;
+  margin-top: 6px;
+}
+
+.formLabel {
+  @include typographyBuilder(400, 14, 12);
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.formInputText {
+  @extend .form_input;
+  @include typographyBuilder(400, 14, 12);
+  width: 60px;
+  text-align: center;
+  -moz-appearance: textfield !important;
+
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+  }
+}
+
+.formInputArea {
+  @extend .form_input;
+  @include typographyBuilder(400, 14, 12);
+  width: 100%;
+  min-width: 100%;
+  max-height: 60px;
+  min-height: 60px;
+  padding: calc(6px + 0.6vw);
+}
+
+.formHeaderTitle {
+  @include typographyBuilder(600, 18, 16);
+  margin: 0;
+}
+
+.back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.backIcon {
+  @include icon('back', $colorTheme1, 16px, 16px)
+}
+
+.buttonSubmit {
+  margin-top: 8px;
+}
+
+.title {
+  @include typographyBuilder(600, 18, 16);
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.descriptionContainer {
+  @include flex(row, center, center, true);
+
+  >label {
+    @include typographyBuilder(400, 12, 12);
+    @include flex(row, center);
+    text-align: left;
+    margin: 0 8px 8px 0;
+
+    &:first-child {
+      width: 100%;
+    }
+
+    span {
+      margin-right: 3px;
+    }
+  }
+
+  a {
+    @include typographyBuilder(600, 12, 12);
+    text-decoration: underline;
+    margin: 0 0 0 3px;
+    opacity: 1;
+  }
+}
+
+.button {
+  @include flex(row, center, space-between);
+  margin-top: 5px;
+
+  button {
+    @include fixedWidth(calc(50% - 4px));
+  }
+}
+
+.iconClock {
+  @include icon('clock', $colorTheme1, 14px, 14px)
+}
+
+.iconDate {
+  @include icon('date', $colorTheme1, 14px, 14px)
+}
+
+.iconPlace {
+  @include icon('place', $colorTheme1, 14px, 14px)
+}
+
+.close {
+  @include typographyBuilder(600, 24, 24);
+  background-color: transparent;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  border: 0;
+  outline: 0;
+}
+
+.headerContainer {
+  margin-bottom: 25px;
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.weddingGiftContainer {
+  text-align: left;
+}
+
+.weddingGiftTitle {
+  @include typographyBuilder(400, 14, 16);
+  margin-bottom: calc(5px + .5vh);
+}
+
+.weddingGift {
+  @include typographyBuilder(600, 14, 16);
+  margin-bottom: calc(8px + .8vh);
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  color: $colorTheme1;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.weddingGiftDetail {
+  margin-bottom: calc(10px + 1vh);
+}
+
+.weddingGiftDetailRekening {
+  @include flex(row, center, space-between);
+  border: 1px solid $color_light_border;
+  border-radius: 3px;
+  padding: calc(5px + .5vh) calc(5px + .5vw);
+  margin-bottom: calc(5px + .5vh);
+
+  h3 {
+    @include typographyBuilder(400, 16, 18);
+    margin: 0;
+
+    span {
+      @include typographyBuilder(600, 14, 18);
+    }
+
+    label{
+      @include typographyBuilder(400, 12, 14);
+    }
+  }
+
+  p {
+    @include typographyBuilder(600, 12, 18);
+    margin: 0;
+  }
+}
+
+.weddingGiftDetailTitle{
+  @include typographyBuilder(400, 16, 18);
+  @include flex(row, center, center);
+  margin-bottom: calc(10px + .10vh);
+  margin-top: 0;
+  color: $colorTheme3;
+
+  &::after {
+    @include fixedHeight(2px);
+    content: "";
+    display: block;
+    margin-left: calc(8px + .8vw);
+    width: 100%;
+    border-bottom: 1px solid $colorTheme3;
+  }
+}
