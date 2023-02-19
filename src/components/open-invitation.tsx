@@ -35,6 +35,7 @@ const OpenInvitation: FC<OpenInvitationTypes> = ({
         objectFit='cover'
         placeholder="blur"
         blurDataURL={imageSrc.open}
+        unoptimized
      />
       <div className={styles.body}>
         <div
