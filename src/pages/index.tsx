@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Inter } from '@next/font/google'
+import { useEffect, useState } from 'react';
 import Layout from '@/components/layout';
 import styles from '@/styles/pages/Home.module.scss'
 import CoverSection from '@/components/cover-section';
@@ -13,7 +12,7 @@ export default function Home() {
   const [audioPlay, setAudioPlay] = useState(false);
   const [audio] = useState(typeof Audio != "undefined" && new Audio(audioLink));
   const [openInvitation, setOpenInvitation] = useState<boolean>(true)
-  
+
   const handlePause = () => {
     setAudioPlay(!audioPlay)
   }
@@ -22,7 +21,20 @@ export default function Home() {
     setOpenInvitation(false)
     setAudioPlay(true)
   }
-  
+
+  useEffect(() => {
+    if (audio) {
+      audioPlay ? audio?.play() : audio?.pause();
+    }
+  }, [audioPlay, audio])
+
+  useEffect(() => {
+    audio && audio.addEventListener('ended', () => setAudioPlay(false));
+    return () => {
+      audio && audio.removeEventListener('ended', () => setAudioPlay(false));
+    };
+  }, [audio]);
+
   return (
     <Layout>
       <OpenInvitation
