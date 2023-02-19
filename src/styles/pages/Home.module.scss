@@ -12,7 +12,7 @@
 .container{
     @include fixedHeight(100vh);
     @include fixedWidth(100vw);
-    background-color: transparent;
+    // background-color: transparent;
     opacity: 1;
     margin: auto;
     position: fixed;

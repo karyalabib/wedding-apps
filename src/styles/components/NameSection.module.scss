@@ -12,7 +12,7 @@
 
 .container {
     @include flex(column, center, space-between);
-    background-color: rgba($color_white, 0.5);
+    background-color: rgba($colorTheme3, 1);
     padding: calc(40px + 4vh) calc(10px + 1vw) calc(18px + 1.8vh);
     text-align: center;
     position: relative;
@@ -39,6 +39,10 @@
     @include flex(row, flex-start, center);
     margin-bottom: calc(20px + 2vh);
     padding: 0 calc(10px + 1vw);
+
+    & > * {
+        @include fixedWidth(calc(100% / 2));
+    }
 
     &:nth-child(2) {
         text-align: left;
@@ -72,7 +76,7 @@
     @include typographyBuilder(600, 17, 24);
     margin-bottom: calc(8px + .8vh);
     margin-top: 0;
-    color: $colorTheme3;
+    color: $colorTheme1;
 }
 
 .personDesc {

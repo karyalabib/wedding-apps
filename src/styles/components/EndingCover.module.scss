@@ -12,7 +12,7 @@
     position: absolute;
     top: 0;
     z-index: 1;
-    background: linear-gradient(0deg, rgba(57, 7, 36, 0.8), transparent 70%, rgb(253 251 253));
+    background: linear-gradient(0deg, $colorTheme1, transparent 70%, $colorTheme3);
 }
 
 .content {

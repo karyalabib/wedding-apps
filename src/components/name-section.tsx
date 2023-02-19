@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import Image from 'next/image'
 import Link from 'next/link';
-import { DataType } from '@/pages';
 import styles from '@/styles/components/NameSection.module.scss'
 import stylesButton from '@/styles/components/Button.module.scss'
+import { altImage, data } from '@/config';
 
 type SectionPerson = {
     name: string
@@ -14,13 +14,7 @@ type SectionPerson = {
     ig: string
 }
 
-type NameSection = {
-    data: DataType
-}
-
-const NameSection: FC<NameSection> = ({
-    data,
-}) => {
+const NameSection: FC = () => {
 
   const sectionPerson = ({
     name,
@@ -39,7 +33,7 @@ const NameSection: FC<NameSection> = ({
           <Image
             loader={myLoader}
             src={photo}
-            alt="labib - anggi"
+            alt={altImage}
             className={styles.personPhoto}
             width={150}
             height={180}
@@ -71,16 +65,16 @@ const NameSection: FC<NameSection> = ({
         female: false,
         father: data.groom.fatherName,
         mother: data.groom.motherName,
-        photo: "https://gctupmxqbczdwwhyntpz.supabase.co/storage/v1/object/public/photo/labib",
-        ig: "labibmon"
+        photo: data.groom.photo,
+        ig: data.groom.ig
       })}
       {sectionPerson({
         name: data.bride.fullname,
         female: true,
         father: data.bride.fatherName,
         mother: data.bride.motherName,
-        photo: "https://gctupmxqbczdwwhyntpz.supabase.co/storage/v1/object/public/photo/anggi",
-        ig: "anggirizky_"
+        photo: data.bride.photo,
+        ig: data.bride.ig
       })}
     </div>
   )
