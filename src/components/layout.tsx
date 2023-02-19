@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { FC, ReactNode } from 'react'
 import styles from '@/styles/components/Layout.module.scss'
+import { data } from '@/config'
 
 type LayoutPropType = {
   children?: ReactNode
@@ -17,7 +18,7 @@ const Layout: FC<LayoutPropType> = ({
   return (
     <>
       <Head>
-        <title>The Wedding of Anggi &amp; Labib</title>
+        <title>The Wedding of {data.groom.name} &amp; {data.bride.name}</title>
         {/* Link Tag */}
         <link rel="icon" href="/icon-192x192.png"  />
         <link rel="canonical" href="" />
