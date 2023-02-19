@@ -45,7 +45,7 @@
   position: absolute;
   top: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba($colorTheme3, 0.8), transparent 30%, rgba($colorTheme3, 0.8));
+  background: linear-gradient(180deg, rgba($colorTheme1, 0.8), transparent 30%, rgba($colorTheme1, 0.8));
 }
 
 .backgroundContainer {
@@ -100,7 +100,7 @@
   color: $color_white;
   border-left: 0;
   border-right: 0;
-  background-color: rgba($color: $colorTheme1, $alpha: .5);
+
 }
 
 .text {
