@@ -7,7 +7,7 @@ const data: DataType = {
     fatherName: "Abd. Qodim",
     motherName: "Basni Masrohatin",
     ig: "zakkazakuwi",
-    photo: "https://zehusnfzvihagybljexx.supabase.co/storage/v1/object/public/photo/open.png",
+    photo: "https://zehusnfzvihagybljexx.supabase.co/storage/v1/object/public/photo/zakka.png",
   },
   bride: {
     name: "Tyas",
