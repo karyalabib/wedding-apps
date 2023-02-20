@@ -39,10 +39,11 @@
 
   h3 {
     @include flex(row, center, center);
-    @include typographyBuilder(600, 18, 22);
+    @include typographyBuilder(600, 24, 22);
     color: $colorTheme3;
     margin-top: 0;
     white-space: nowrap;
+    text-transform: uppercase;
 
     &::after {
       @include fixedHeight(2px);
@@ -58,12 +59,18 @@
     @include typographyBuilder(600, 16, 16);
     margin-top: 0;
     margin-bottom: calc(5px + 1vh);
+    margin-top: calc(18px + .9vh);
   }
 
   p {
     @include typographyBuilder(400, 14, 14);
+    @include flex(row, center, flex-start);
     margin-top: 0;
-    margin-bottom: calc(18px + .9vh);
+
+    span{
+    @include typographyBuilder(600, 14, 14);
+      width: 20%;
+    }
   }
 }
 
@@ -98,7 +105,7 @@
 }
 
 .map {
-  @include fixedHeight("350px");
+  @include fixedHeight("150px");
   @include fixedWidth("100%");
   display: block;
   margin-bottom: calc(18px + .9vh);
