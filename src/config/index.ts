@@ -80,11 +80,11 @@ const gift = {
     },
   ],
   address: [
-    // {
-    //   name: 'M Labib Naufal A',
-    //   phoneNumber: '081585737170',
-    //   addres: 'Jl.WR Supratman Gg XI No 79 RT.3/RW.6, Kel.Sendangharjo, Kab.Tuban, Jawa Timur, ID 62319'
-    // }
+    {
+      name: 'Musthofa Zakka',
+      phoneNumber: '085708882289',
+      addres: 'Ds Kowang, RT.3/RW.3, Kowang, Kec.Semanding, Kab.Tuban, Jawa Timur, ID 62381'
+    }
   ],
 };
 
