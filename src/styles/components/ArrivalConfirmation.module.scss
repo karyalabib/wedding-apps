@@ -227,6 +227,7 @@
 
     span {
       @include typographyBuilder(600, 14, 18);
+      text-transform: uppercase;
     }
 
     label{

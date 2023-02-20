@@ -1,9 +1,9 @@
 import { FC, useState } from 'react'
 import { gift } from '@/config';
 import { toast } from 'react-toastify';
+import { GiftAddressType, GiftBankType, GiftType } from '@/config/types';
 import styles from '@/styles/components/ArrivalConfirmation.module.scss'
 import stylesButton from '@/styles/components/Button.module.scss'
-import { GiftAddressType, GiftBankType, GiftType } from '@/config/types';
 
 const caption = {
   title: 'Bagi keluarga dan sahabat yang ingin mengirimkan hadiah, silakan mengirimkannya melalui tautan berikut:',
@@ -56,27 +56,29 @@ const GiftSection: FC = () => {
             ))}
 
 
-            <h4 className={styles.weddingGiftDetailTitle}>{caption.address}</h4>
             {address.length > 0 && address.map((item: GiftAddressType, index) => (
-              <div
-                key={index}
-                className={styles.weddingGiftDetailRekening}
-              >
-                <div>
-                  <h3>
-                    <span>{item.name} - {item.phoneNumber}</span>
-                    <br />
-                    <label>
-                      {item.addres}
-                    </label>
-                  </h3>
+              <>
+                <h4 className={styles.weddingGiftDetailTitle}>{caption.address}</h4>
+                <div
+                  key={index}
+                  className={styles.weddingGiftDetailRekening}
+                >
+                  <div>
+                    <h3>
+                      <span>{item.name} - {item.phoneNumber}</span>
+                      <br />
+                      <label>
+                        {item.addres}
+                      </label>
+                    </h3>
+                  </div>
+                  <button
+                    className={stylesButton.btn_primarySmall}
+                    type="button"
+                    onClick={() => handleCopy(`${item.name} - ${item.phoneNumber} | ${item.addres}`)}
+                  >{caption.copy}</button>
                 </div>
-                <button
-                  className={stylesButton.btn_primarySmall}
-                  type="button"
-                  onClick={() => handleCopy(`${item.name} - ${item.phoneNumber} | ${item.addres}`)}
-                >{caption.copy}</button>
-              </div>
+              </>
             ))}
           </div>
           <div>
