@@ -1,0 +1,51 @@
+@import '../utils/variables';
+@import '../components/Form.module.scss';
+
+.container{
+    @include flex(row, center, center);
+    @include fixedWidth(100vw);
+    @include fixedHeight(100vh);
+    background-color: $color_black;
+}
+
+.body{
+    @include flex(column, center, center);
+    background-color: $color_white;
+    padding: calc(10px + 1vh) calc(10px + 1vw);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 324px;
+
+    div{
+        width: 100%;
+        padding-top: calc(10px + 1vh);
+        margin-top: calc(10px + 1vh);
+    }
+}
+
+.title{
+    @include typographyBuilder(600, 16, 16);
+    margin: 0;
+}
+
+.titleInput{
+    @include typographyBuilder(400, 14, 16);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.link{
+    @include typographyBuilder(400, 14, 16);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 15px;
+}
+
+.input{
+    @extend .form_input;
+    @include typographyBuilder(400, 14, 12);
+    @include fixedWidth(100%);
+    margin-bottom: 10px;
+}

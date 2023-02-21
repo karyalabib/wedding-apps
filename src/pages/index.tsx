@@ -7,12 +7,14 @@ import DateSection from '@/components/date-section';
 import { audioLink } from '@/config';
 import EndingSection from '@/components/ending-section';
 import OpenInvitation from '@/components/open-invitation';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
   const [audioPlay, setAudioPlay] = useState(false);
   const [audio] = useState(typeof Audio != "undefined" && new Audio(audioLink));
   const [openInvitation, setOpenInvitation] = useState<boolean>(true)
-
+  
   const handlePause = () => {
     setAudioPlay(!audioPlay)
   }
@@ -41,7 +43,7 @@ export default function Home() {
         withButton={true}
         open={openInvitation}
         onClose={() => handleClose()}
-        name={"labib"}
+        name={String(router.query.name)}
       />
       <div className={styles.container}>
         <div className={styles.content}>
