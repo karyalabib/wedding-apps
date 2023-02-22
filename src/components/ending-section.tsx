@@ -32,7 +32,7 @@ const EndingSection: FC<EndingSectionPropsType> = ({
         {/* <p className={styles.desc}>Suatu kehormatan dan kebahagiaan bagi kami jika Bapak/Ibu/Saudara/i. Silahkan datang untuk memberikan restu, kami ucapkan terima kasih.</p> */}
         <h4 className={styles.title}>Kami yang berbahagia</h4>
         <h5 className={styles.titleFamily}>Keluarga Bapak {data.groom.fatherName}. dan Ibu {data.groom.motherName}</h5>
-        <h5 className={styles.titleFamily}>Keluarga Bapak {data.groom.motherName} dan Ibu {data.bride.motherName}</h5>
+        <h5 className={styles.titleFamily}>Keluarga Bapak {data.bride.fatherName} dan Ibu {data.bride.motherName}</h5>
         {/* <p className={styles.date}>11&nbsp;&nbsp;.&nbsp;&nbsp;12&nbsp;&nbsp;.&nbsp;&nbsp;22</p> */}
         <h3 className={styles.name}>{data.groom.name} &amp; {data.bride.name} &nbsp;.</h3>
       </div>
